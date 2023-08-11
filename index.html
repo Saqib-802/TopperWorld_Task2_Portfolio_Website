@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, h3, p {
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(187, 154, 110);
+      line-height: 1.6;
+    }
+    
+    /* Header styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    
+    /* Navigation styles */
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    
+    nav ul li {
+      margin-right: 2rem;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    
+    nav ul li a:hover {
+      color: #ccc;
+    }
+    
+    /* About section styles */
+    .about {
+      padding: 4rem;
+      background-color:white;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Skills section styles */
+    .skills {
+      padding: 4rem;
+      background-color: #f4f4f4;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .skill {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .skill-icon {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+    
+    /* Projects section styles */
+    .projects {
+      padding: 4rem;
+      background-color: #fff;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project {
+      margin: 2rem 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    .project-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-description {
+      margin-bottom: 1rem;
+    }
+
+      /* Education section styles */
+      .education {
+      padding: 4rem;
+      background-color: #fff;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .education-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .education-degree {
+      font-weight: bold;
+    }
+    
+    .education-details {
+      color: #666;
+    }
+    
+    /* Certifications section styles */
+    .certifications {
+      padding: 4rem;
+      background-color: #f4f4f4;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .certification-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .certification-title {
+      font-weight: bold;
+    }
+    
+    .certification-details {
+      color: #666;
+    }
+    
+    /* Strengths section styles */
+    .strengths {
+      padding: 4rem;
+      background-color: #fff;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .strength-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Hobbies section styles */
+    .hobbies {
+      padding: 4rem;
+      background-color: #f4f4f4;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hobby-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Contact section styles */
+    .contact {
+      padding: 4rem;
+      background-color: #fff;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-input {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    .form-textarea {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    /* Profile photo styles */
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
+  /* Contact links styles */
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: #333;
+    transition: color 0.3s;
+  }
+
+  .contact-icon:hover {
+    color: #666;
+  }
+    
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#strengths">Strengths</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>🌟 Embarking on a digital odyssey as Mohd Saqib, I embrace my identity as a versatile Web Developer and Java Virtuoso. 🚀 Through keystrokes and lines of code, I unfurl a vibrant tapestry of virtual wonders, weaving the imagination into awe-inspiring web experiences.
+
+        💡 Armed with a keyboard as my brush and a screen as my canvas, I choreograph a symphony of HTML, CSS, and JavaScript. Each stroke of code is a brushstroke of innovation, culminating in captivating interfaces that beckon users to explore, engage, and be entranced by the digital realm's allure.
+        
+        🔮 Venturing deeper into the enigmatic labyrinth of programming, I find myself entwined with the intricate threads of Java. 🎨 Like an artist, I harness this language to sculpt intricate algorithms and resilient solutions. Every snippet of code becomes a pixel in the masterpiece, as abstract ideas metamorphose into tangible software realities.
+        
+        🌱 A perpetual student of technology's evolving landscape, I embrace new frameworks, libraries, and methodologies as my ever-sharpening tools. With each project, I reimagine the boundaries of digital possibility, blending timeless wisdom with future-forward innovation.
+        
+        🤝 Collaboration is my symphony's crescendo, a harmonious dance with designers, creators, and fellow developers. 🎼 Together, we weave a tapestry of synergy, where intricate ideas meld into collective brilliance. My ability to distill complex concepts into eloquent explanations fosters an atmosphere of seamless cooperation.
+        
+        🎨 In the grand mosaic of the digital domain, I, Mohd Saqib, am the visionary artist, fashioning the future one pixel, one line of code at a time. Each creation leaves an indelible mark on the canvas of technology, inviting all to witness the symphony of innovation unfolding before their eyes.</p>
+  </section>
+  
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skill">
+      <div class="skill-icon">🚀</div>
+      <div>Web Development</div>
+    </div>
+    <div class="skill">
+      <div class="skill-icon">🧩</div>
+      <div>Problem Solving</div>
+    </div>
+    <div class="skill">
+        <div class="skill-icon">🖥️</div>
+        <div>JAVA , PYTHON ,C++</div>
+      </div>
+      <div class="skill">
+        <div class="skill-icon">🖥️</div>
+        <div>HTML , CSS , JAVASCRIPT</div>
+      </div>  
+    <div class="skill">
+      <div class="skill-icon">📱</div>
+      <div>Responsive Design</div>
+    </div>
+    <div class="skill">
+        <div class="skill-icon">🚀</div>
+        <div>DBMS</div>
+      </div>
+    <div class="skill">
+      <div class="skill-icon">📊</div>
+      <div>Data Visualization</div>
+    </div>
+  </section>
+  
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3 class="project-title">Landin Page</h3>
+      <p class="project-description">🌟 Crafting an Inviting Landing Page: HTML + CSS + JavaScript 🎉<br><br>
+
+        Step into the world of web design as we create a captivating landing page using the dynamic trio of HTML, CSS, and JavaScript. HTML forms the groundwork, CSS adds an artistic touch with stunning visuals, while JavaScript brings interactivity to life. Watch symbols evolve into an engaging portal that welcomes and captivates visitors! 🚀🌄</p>
+    </div>
+    <div class="project">
+      <h3 class="project-title">Calculator</h3>
+      <p class="project-description">🔢 Crafting a Stylish Calculator: HTML, CSS, JavaScript 🎨<br><br>
+
+        Embark on a coding adventure and build a chic calculator using the trio of HTML, CSS, and JavaScript. HTML sets the structure, CSS adds flair with captivating visuals, while JavaScript brings numbers to life, letting you perform calculations with a tap. Witness symbols transform into an interactive masterpiece! 🌟🧮</p>
+    </div>
+    <div class="project">
+        <h3 class="project-title">Registration Form</h3>
+        <p class="project-description">📝 Crafting a Registration Form: HTML + CSS + JavaScript 🎨<br><br>
+
+            Unveil the artistry of coding as we design a captivating registration form using the dynamic trio of HTML, CSS, and JavaScript. HTML forms the canvas, CSS paints it with stylish aesthetics, and JavaScript adds interactive magic – creating a seamless user journey. Watch symbols transform into a portal of input and expression! ✨🖋️</p>
+      </div>
+      <div class="project">
+        <h3 class="project-title">Login Page</h3>
+        <p class="project-description">🔐 Building a Secure Login Page: HTML + CSS + JavaScript 🏰<br><br>
+
+            Embark on a web development journey with the trio of HTML, CSS, and JavaScript, crafting a fortress-like login page. HTML creates the foundation, CSS adorns it with visual elegance, while JavaScript fortifies it with dynamic user interactions. Witness symbols meld into a gateway of authentication and access control! 🚪🔑</p>
+      </div>
+    <!-- Add more project divs as needed -->
+  </section>
+
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <div class="education-item">
+      <div class="education-degree">Bachelor of Technology in Computer Science</div>
+      <div class="education-details">School of Management Sciences , Lucknow<br>2020-2024<br>84%</div>
+    </div>
+    <div class="education-item">
+        <div class="education-degree">XII</div>
+        <div class="education-details">Hira Public School(CBSE)<br>2019-2020<br>86%</div>
+      </div>
+      <div class="education-item">
+        <div class="education-degree">X</div>
+        <div class="education-details">Hira Public School(CBSE)<br>2017-2018<br>74.6%</div>
+      </div>
+    <!-- Add more education items as needed -->
+  </section>
+  
+  <section id="certifications" class="certifications">
+    <h2>Certifications</h2>
+    <div class="certification-item">
+      <div class="certification-title">C and C++ programming language</div>
+      <div class="certification-details">Issued by internshala company</div>
+    </div>
+    <div class="certification-item">
+        <div class="certification-title">PYTHON programming language</div>
+        <div class="certification-details">Issued by GUVI GEEK NETWORKS || IITM RESEARCH PARK</div>
+      </div>
+      <div class="certification-item">
+        <div class="certification-title">Machine Learning using Python</div>
+        <div class="certification-details">Issued by LOGICPRO LINFOSYSTEMS</div>
+      </div>
+      <div class="certification-item">
+        <div class="certification-title">Introduction to internet of things</div>
+        <div class="certification-details">Issued by Indian Institute of Technology kharagpur</div>
+      </div>
+      <div class="certification-item">
+        <div class="certification-title">Developing Soft Skill and Personality</div>
+        <div class="certification-details">Issued by Indian Institute of Technology kharagpur</div>
+      </div>
+    <!-- Add more certification items as needed -->
+  </section>
+  
+  <section id="strengths" class="strengths">
+    <h2>Strengths</h2>
+    <div class="strength-item">Problem Solving</div>
+    <div class="strength-item">Leadership</div>
+    <div class="strength-item">Communication</div>
+    <div class="strength-item">Time management</div>
+    <div class="strength-item">Creativity</div>
+    <div class="strength-item">Team Collaboration</div>
+    <!-- Add more strengths as needed -->
+  </section>
+  
+  <section id="hobbies" class="hobbies">
+    <h2>Hobbies</h2>
+    <div class="hobby-item">Reading</div>
+    <div class="hobby-item">writing</div>
+    <div class="hobby-item">Photography</div>
+    <div class="hobby-item">Cooking</div>
+    <div class="hobby-item">painting</div>
+    <div class="hobby-item">Gardening</div>
+    <div class="hobby-item">Playing Musical Instruments</div>
+    <!-- Add more hobbies as needed -->
+  </section>
+  
+  
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-form">
+      <input class="form-input" type="text" placeholder="Your Name">
+      <input class="form-input" type="email" placeholder="Your Email">
+      <textarea class="form-textarea" placeholder="Your Message"></textarea>
+      <button class="form-button">Send Message</button>
+    </div>
+    <div class="contact-links">
+        <a href="https://www.linkedin.com/in/mohd-saqib-a35409224/" target="_blank">
+          <div class="contact-icon">🔗</div>
+        </a>
+        <a href="https://github.com/Saqib-802" target="_blank">
+          <div class="contact-icon">🐙</div>
+        </a>
+        <a href="https://www.facebook.com/mohd.saqib.397948" target="_blank">
+          <div class="contact-icon">📚</div>
+        </a>
+        <a href="https://www.instagram.com/mohdsaqib802/" target="_blank">
+          <div class="contact-icon">📷</div>
+        </a>
+      </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2023 Your Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>
